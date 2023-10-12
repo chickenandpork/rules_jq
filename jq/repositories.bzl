@@ -49,6 +49,11 @@ def _jq_repo_impl(repository_ctx):
     if not version_found:
         fail("did not find {} version in https://api.github.com/repos/jqlang/jq/releases".format(repository_ctx.attr.jq_version))
 
+    # On around jq-1.7rc1, released around 2023-07-30, the naming scheme changes for macos binaries
+    # (and reduced support for macos < 12.3).  The 1.6 release was around 2021-11-02, populated
+    # 2021-11-02 and 2021-11-20 with binaries.  We therefore swap in the older naming scheme for a
+    # *release*, not a binary, on/before 2018-11-02 01:54:29 UTC or earlier, ie less than 01:54:30Z
+
     platform = repository_ctx.attr.platform
     if version_date < "2018-11-02T01:54:30Z":
         platform = platform.replace("macos-", "osx-")

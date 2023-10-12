@@ -6,7 +6,6 @@ jq-1.6 is compatible with linux/x64 and macos/x64 < osx-12.3
 jq-1.7 is compatible with linux/x64, macos/x64, macos/arm (macos > 12.3)
 
 
-
 ## Installation
 
 Include this in your WORKSPACE file:
