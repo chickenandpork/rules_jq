@@ -42,12 +42,12 @@ jobs:
           bazel-version: ${{ matrix.bazel }}
           github-api-token: ${{ secrets.READONLY_TOKEN }}
       - name: Mount bazel action cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: "~/.cache/bazel"
           key: bazel
       - name: Mount bazel repo cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: "~/.cache/bazel-repo"
           key: bazel-repo
