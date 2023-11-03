@@ -8,12 +8,12 @@ Include this in your WORKSPACE file:
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 http_archive(
-    name = "slamdev_rules_jq",
-    url = "https://github.com/slamdev/rules_jq/releases/download/0.0.0/slamdev_rules_jq-v0.0.0.tar.gz",
+    name = "rules_jq",
+    url = "https://github.com/jqlang/bazel_rules_jq/releases/download/0.0.0/rules_jq-v0.0.0.tar.gz",
     sha256 = "",
 )
 
-load("@slamdev_rules_jq//jq:repositories.bzl", "jq_register_toolchains", "rules_jq_dependencies")
+load("@rules_jq//jq:repositories.bzl", "jq_register_toolchains", "rules_jq_dependencies")
 
 rules_jq_dependencies()
 

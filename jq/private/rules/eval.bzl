@@ -101,7 +101,7 @@ def _impl(ctx):
         inputs = ctx.files.srcs,
         outputs = [out],
         arguments = [out.path],
-        tools = ctx.toolchains["@slamdev_rules_jq//jq:toolchain_type"].default.files,
+        tools = ctx.toolchains["@rules_jq//jq:toolchain_type"].default.files,
         command = " ".join(command) + " > $1",
         mnemonic = "JQ",
         progress_message = "JQ to %{output}",
@@ -114,5 +114,5 @@ eval = rule(
     implementation = _impl,
     attrs = _ATTRS,
     provides = [DefaultInfo],
-    toolchains = ["@slamdev_rules_jq//jq:toolchain_type"],
+    toolchains = ["@rules_jq//jq:toolchain_type"],
 )

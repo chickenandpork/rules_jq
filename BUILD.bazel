@@ -14,7 +14,7 @@ gazelle(
 
 # This builds the release artifact used in .github/workflows/release.yaml
 pkg_tar(
-    name = "slamdev_rules_jq",
+    name = "rules_jq",
     srcs = [
         "LICENSE",
         "README.md",

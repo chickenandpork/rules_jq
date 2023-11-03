@@ -1,5 +1,9 @@
 # Bazel settings to apply on CI only
-# Included with a --bazelrc option in the call to bazel
+
+# These options are applied with an explicit --bazelrc option in the call to bazel in
+# .github/workflows/ci.yaml
+#    bazel --bazelrc=.github/workflows/ci.bazelrc --bazelrc=.bazelrc <action> ...
+
 build --announce_rc
 test --test_output=errors
 build --disk_cache=$HOME/.cache/bazel
